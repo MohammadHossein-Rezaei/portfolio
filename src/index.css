@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@keyframes highlight-animate {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+* {
+  font-family: "Roboto";
+}
+
+.highlight {
+  position: relative;
+  background-image: linear-gradient(to right, #fde047 0%, #fde047 100%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 1s ease-out;
+}
+
+.dark .highlight {
+  background-image: linear-gradient(to right, #000000 0%, #000000 100%);
+}
+.highlight.visible {
+  background-size: 100% 100%;
+}
+h1 {
+  user-select: none;
+}
+h2 {
+  user-select: none;
+}
+p {
+  user-select: none;
+}
+* {
+  scroll-behavior: smooth;
+}
